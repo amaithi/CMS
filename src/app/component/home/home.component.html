@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row fw-bold border-bottom py-2">
+    <div class="col">Title</div>
+    <div class="col">Article Image</div>
+    <div class="col">Sub Title</div>
+    <div class="col">Category ID</div>
+    <div class="col">Author Name</div>
+    <div class="col">Article Type</div>
+    <div class="col">Tags</div>
+  </div>
+  <div
+    class="row align-items-center border-bottom py-2"
+    *ngFor="let item of homepage"
+  >
+    <div class="col">{{ item.title }}</div>
+    <div class="col">
+      <span *ngFor="let articleItem of article">
+        <ng-container
+          *ngIf="articleItem.articleId == item.articleId; else notFound"
+        >
+          <span>
+                <img [src]="item?.hero" alt="Hero" width="100" />
+          </span>
+        </ng-container>
+
+        <ng-template #notFound>
+          <span> - </span>
+        </ng-template>
+        
+      </span>
+    </div>
+    <div class="col">
+      <span *ngFor="let articleItem of article">
+        <ng-container
+          *ngIf="articleItem.articleId == item.articleId; else notFound"
+        >
+          <span>
+            {{ articleItem.Subtitle }}
+          </span>
+        </ng-container>
+
+        <ng-template #notFound>
+          <span> - </span>
+        </ng-template>
+      </span>
+
+      <!-- {{article | json}} {{ item.articleId }} -->
+    </div>
+    <div class="col">
+      <span *ngFor="let catagoryItem of categories">
+        <ng-container
+          *ngIf="catagoryItem.categoryId == item.categoryId; else notFound"
+        >
+          <span>
+            {{ catagoryItem.Technology }}
+          </span>
+        </ng-container>
+
+        <ng-template #notFound>
+          <span> - </span>
+        </ng-template>
+      </span>
+    </div>
+    <div class="col">
+      <span *ngFor="let articleItem of article">
+        <ng-container
+          *ngIf="articleItem.articleId == item.articleId; else notFound"
+        >
+          <span>
+            {{ articleItem.author.authorName }}
+          </span>
+        </ng-container>
+
+        <ng-template #notFound>
+          <span> - </span>
+        </ng-template>
+      </span>
+    </div>
+    <div class="col">{{ articleType[item.articleType - 1] }}</div>
+    <div class="col">{{ item.tags }}</div>
+  </div>
+</div>

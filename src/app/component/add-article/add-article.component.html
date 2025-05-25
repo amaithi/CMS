@@ -1,0 +1,64 @@
+<div class="cms-article-form container mt-4">
+    <h2 class="mb-4">Add New Article</h2>
+    <form>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="title" class="form-label">Title*</label>
+                <input id="title" name="title" type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="heroImage" class="form-label">Hero Image URL*</label>
+                <input id="heroImage" name="heroImage" type="url" class="form-control" required placeholder="https://example.com/image.jpg">
+                <small class="form-text text-muted">16:9 ratio recommended</small>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="author" class="form-label">Author*</label>
+                <input id="author" name="author" type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="subtitle" class="form-label">Sub Title</label>
+                <input id="subtitle" name="subtitle" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="articleType" class="form-label">Article Type*</label>
+                <select id="articleType" name="articleType" class="form-select" required>
+                    <option value="text">Text</option>
+                    <option value="audio">Audio</option>
+                    <option value="video">Video</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="category" class="form-label">Category*</label>
+                <select id="category" name="category" class="form-select" required>
+                    <option value="">Select Category</option>
+                    <!-- Categories to be populated dynamically -->
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6" id="descriptionField">
+                <label for="description" class="form-label">Description</label>
+                <textarea id="description" name="description" class="form-control"></textarea>
+            </div>
+            <div class="col-md-6" id="mediaUrlField" style="display:none;">
+                <label for="mediaUrl" class="form-label">Media URL</label>
+                <input id="mediaUrl" name="mediaUrl" type="url" class="form-control" placeholder="https://example.com/media.mp4">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="tags" class="form-label">Tags</label>
+                <input id="tags" name="tags" type="text" class="form-control" placeholder="Tag1, Tag2">
+            </div>
+            <div class="col-md-6">
+                <label for="publishDate" class="form-label">Publish Date*</label>
+                <input id="publishDate" name="publishDate" type="date" class="form-control" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Article</button>
+    </form>
+</div>
