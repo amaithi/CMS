@@ -1,0 +1,12 @@
+{
+  "status": 1,
+  "message": "success",
+  "data": {
+    "authors": [
+      {
+        "authorId": "y7w3w242",
+        "authorName": "william"
+      }
+    ]
+  }
+}

@@ -19,7 +19,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="redirect('/')"
+            (click)="redirect('home')"
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             >Home</a
@@ -28,7 +28,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="redirect('/add-article')"
+            (click)="redirect('addNew')"
             routerLink="/add-article"
             >Add Article</a
           >
@@ -37,4 +37,9 @@
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<div *ngIf="currentPage == 'home'">
+<app-home></app-home>
+</div>
+<div *ngIf="currentPage != 'home'">
+<app-add-article></app-add-article>
+</div>

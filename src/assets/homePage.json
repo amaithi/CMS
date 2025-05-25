@@ -9,11 +9,12 @@
     "articles": [
       {
         "title": "GitHub Copilot - About, Features and Use Cases",
-        "hero": "https://www.freecodecamp.org/news/content/images/size/w2000/2023/06/Screenshot-2023-06-14-at-12.42.04-PM.png",
+        "hero": "https://www.youtube.com/watch?v=5dICwRdgisg",
         "articleId": "a2b448sq",
         "categoryId": "r4wd2u8",
         "authorId": "y7w3w242",
-        "articleType": 1,
+        "articleType": 2,
+        
         "tags": ["Science", "Technology"]
       },
       {

@@ -14,66 +14,58 @@
   >
     <div class="col">{{ item.title }}</div>
     <div class="col">
-      <span *ngFor="let articleItem of article">
-        <ng-container
+          <img [src]="item?.hero" alt="Hero" width="100" *ngIf="item.articleType ==1"  />
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" *ngIf="item.articleType ==2 || item.articleType==3" target="_blank" rel="noopener noreferrer">
+  Click Link
+</a>
+      <!-- <span *ngFor="let articleItem of article">
+        <span
           *ngIf="articleItem.articleId == item.articleId; else notFound"
         >
           <span>
                 <img [src]="item?.hero" alt="Hero" width="100" />
           </span>
-        </ng-container>
+        </span>
 
         <ng-template #notFound>
           <span> - </span>
         </ng-template>
         
-      </span>
+      </span> -->
     </div>
     <div class="col">
       <span *ngFor="let articleItem of article">
-        <ng-container
-          *ngIf="articleItem.articleId == item.articleId; else notFound"
+        <span
+          *ngIf="articleItem.articleId == item.articleId"
         >
           <span>
             {{ articleItem.Subtitle }}
           </span>
-        </ng-container>
-
-        <ng-template #notFound>
-          <span> - </span>
-        </ng-template>
+        </span>
       </span>
 
       <!-- {{article | json}} {{ item.articleId }} -->
     </div>
     <div class="col">
       <span *ngFor="let catagoryItem of categories">
-        <ng-container
-          *ngIf="catagoryItem.categoryId == item.categoryId; else notFound"
+        <span
+          *ngIf="catagoryItem.categoryId == item.categoryId"
         >
           <span>
-            {{ catagoryItem.Technology }}
+            {{ catagoryItem.categoryName }}
           </span>
-        </ng-container>
-
-        <ng-template #notFound>
-          <span> - </span>
-        </ng-template>
+        </span>
       </span>
     </div>
     <div class="col">
-      <span *ngFor="let articleItem of article">
-        <ng-container
-          *ngIf="articleItem.articleId == item.articleId; else notFound"
+      <span *ngFor="let authorItem of authorData">
+        <span
+          *ngIf="authorItem.authorId == item.authorId"
         >
           <span>
-            {{ articleItem.author.authorName }}
+            {{ authorItem.authorName }}
           </span>
-        </ng-container>
-
-        <ng-template #notFound>
-          <span> - </span>
-        </ng-template>
+        </span>
       </span>
     </div>
     <div class="col">{{ articleType[item.articleType - 1] }}</div>

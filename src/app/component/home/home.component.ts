@@ -13,6 +13,7 @@ export class HomeComponent {
   categories: any;
   article: any;
   homepage: any;
+  authorData:any;
   articleType = ['text','audio','video']
   constructor(private dataService: ApiServiceService) {}
 
@@ -20,13 +21,15 @@ export class HomeComponent {
     this.dataService.fetchCategories().subscribe((data: any) => {
       this.categories = data;
     });
-
+    this.dataService.fetchAuthors().subscribe((data: any) => {
+      this.authorData = data;
+    });
     this.dataService.getArticles().subscribe((data: any) => {
       this.article = data;
     });
 
     this.dataService.fetchHomepage().subscribe((data: any) => {
-      if(data.length){
+      if(data?.length){
         this.homepage = data[0].articles;
       }else{
         this.homepage = [];
