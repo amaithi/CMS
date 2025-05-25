@@ -3,7 +3,7 @@
     <div class="col">Title</div>
     <div class="col">Article Image</div>
     <div class="col">Sub Title</div>
-    <div class="col">Category ID</div>
+    <div class="col">Category Name</div>
     <div class="col">Author Name</div>
     <div class="col">Article Type</div>
     <div class="col">Tags</div>
@@ -14,43 +14,33 @@
   >
     <div class="col">{{ item.title }}</div>
     <div class="col">
-          <img [src]="item?.hero" alt="Hero" width="100" *ngIf="item.articleType ==1"  />
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" *ngIf="item.articleType ==2 || item.articleType==3" target="_blank" rel="noopener noreferrer">
-  Click Link
-</a>
-      <!-- <span *ngFor="let articleItem of article">
-        <span
-          *ngIf="articleItem.articleId == item.articleId; else notFound"
-        >
-          <span>
-                <img [src]="item?.hero" alt="Hero" width="100" />
-          </span>
-        </span>
-
-        <ng-template #notFound>
-          <span> - </span>
-        </ng-template>
-        
-      </span> -->
+      <img
+        [src]="item?.hero"
+        alt="Hero"
+        width="100"
+        *ngIf="item.articleType == 1"
+      />
+      <a
+        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        *ngIf="item.articleType == 2 || item.articleType == 3"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click Link
+      </a>
     </div>
     <div class="col">
       <span *ngFor="let articleItem of article">
-        <span
-          *ngIf="articleItem.articleId == item.articleId"
-        >
+        <span *ngIf="articleItem.articleId == item.articleId">
           <span>
             {{ articleItem.Subtitle }}
           </span>
         </span>
       </span>
-
-      <!-- {{article | json}} {{ item.articleId }} -->
     </div>
     <div class="col">
       <span *ngFor="let catagoryItem of categories">
-        <span
-          *ngIf="catagoryItem.categoryId == item.categoryId"
-        >
+        <span *ngIf="catagoryItem.categoryId == item.categoryId">
           <span>
             {{ catagoryItem.categoryName }}
           </span>
@@ -59,9 +49,7 @@
     </div>
     <div class="col">
       <span *ngFor="let authorItem of authorData">
-        <span
-          *ngIf="authorItem.authorId == item.authorId"
-        >
+        <span *ngIf="authorItem.authorId == item.authorId">
           <span>
             {{ authorItem.authorName }}
           </span>
